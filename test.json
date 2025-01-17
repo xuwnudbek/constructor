@@ -1,0 +1,548 @@
+[
+    {
+        "id": 44,
+        "name": "Jamkhan GROUP",
+        "quantity": 250,
+        "status": "cutting",
+        "start_date": "2025-01-15 00:00:00",
+        "end_date": "2025-01-31 00:00:00",
+        "rasxod": "0.6",
+        "order_models": [
+            {
+                "id": 38,
+                "order_printing_times": [
+                    {
+                        "id": 1,
+                        "planned_time": "2025-01-14 12:39:16",
+                        "actual_time": "2025-01-14 11:14:37",
+                        "status": "cutting",
+                        "comment": "Tezda ishla iplos",
+                        "created_at": "2025-01-14T04:40:33.000000Z",
+                        "order_model": {
+                            "id": 38,
+                            "rasxod": "0",
+                            "model": {
+                                "id": 8,
+                                "name": "BMW",
+                                "rasxod": null,
+                                "submodels": [
+                                    {
+                                        "id": 19,
+                                        "name": "E30",
+                                        "sizes": [
+                                            {
+                                                "id": 37,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 38,
+                                                "name": "36"
+                                            },
+                                            {
+                                                "id": 3,
+                                                "name": "34"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 43,
+                                                "color": {
+                                                    "id": 9,
+                                                    "name": "Red Black",
+                                                    "hex": "5B0013"
+                                                }
+                                            },
+                                            {
+                                                "id": 41,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 42,
+                                                "color": {
+                                                    "id": 31,
+                                                    "name": "Jigarrang",
+                                                    "hex": "6A2D00"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": 20,
+                                        "name": "E46",
+                                        "sizes": [
+                                            {
+                                                "id": 39,
+                                                "name": "34"
+                                            },
+                                            {
+                                                "id": 40,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 41,
+                                                "name": "36"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 46,
+                                                "color": {
+                                                    "id": 28,
+                                                    "name": "Yashil",
+                                                    "hex": "19FF00"
+                                                }
+                                            },
+                                            {
+                                                "id": 45,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 44,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "images": []
+                            },
+                            "submodels": [
+                                {
+                                    "id": 40,
+                                    "quantity": 50,
+                                    "size": {
+                                        "id": 3,
+                                        "name": "34"
+                                    },
+                                    "model_color": {
+                                        "id": 43,
+                                        "color": {
+                                            "id": 9,
+                                            "name": "Red Black",
+                                            "hex": "5B0013"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 19,
+                                        "name": "E30"
+                                    }
+                                },
+                                {
+                                    "id": 41,
+                                    "quantity": 50,
+                                    "size": {
+                                        "id": 37,
+                                        "name": "35"
+                                    },
+                                    "model_color": {
+                                        "id": 41,
+                                        "color": {
+                                            "id": 32,
+                                            "name": "Pink",
+                                            "hex": "FF00E0"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 19,
+                                        "name": "E30",
+                                        "sizes": [
+                                            {
+                                                "id": 37,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 38,
+                                                "name": "36"
+                                            },
+                                            {
+                                                "id": 3,
+                                                "name": "34"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 43,
+                                                "color": {
+                                                    "id": 9,
+                                                    "name": "Red Black",
+                                                    "hex": "5B0013"
+                                                }
+                                            },
+                                            {
+                                                "id": 41,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 42,
+                                                "color": {
+                                                    "id": 31,
+                                                    "name": "Jigarrang",
+                                                    "hex": "6A2D00"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 42,
+                                    "quantity": 50,
+                                    "size": {
+                                        "id": 39,
+                                        "name": "34"
+                                    },
+                                    "model_color": {
+                                        "id": 46,
+                                        "color": {
+                                            "id": 28,
+                                            "name": "Yashil",
+                                            "hex": "19FF00"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 20,
+                                        "name": "E46",
+                                        "sizes": [
+                                            {
+                                                "id": 39,
+                                                "name": "34"
+                                            },
+                                            {
+                                                "id": 40,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 41,
+                                                "name": "36"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 46,
+                                                "color": {
+                                                    "id": 28,
+                                                    "name": "Yashil",
+                                                    "hex": "19FF00"
+                                                }
+                                            },
+                                            {
+                                                "id": 45,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 44,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 43,
+                                    "quantity": 100,
+                                    "size": {
+                                        "id": 40,
+                                        "name": "35"
+                                    },
+                                    "model_color": {
+                                        "id": 45,
+                                        "color": {
+                                            "id": 32,
+                                            "name": "Pink",
+                                            "hex": "FF00E0"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 20,
+                                        "name": "E46"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "planned_time": "2025-01-14 15:15:02",
+                        "actual_time": null,
+                        "status": "printing",
+                        "comment": "Ishla",
+                        "created_at": "2025-01-14T06:15:32.000000Z",
+                        "order_model": {
+                            "id": 38,
+                            "rasxod": "0",
+                            "model": {
+                                "id": 8,
+                                "name": "BMW",
+                                "rasxod": null,
+                                "images": []
+                            },
+                            "submodels": [
+                                {
+                                    "id": 40,
+                                    "quantity": 50,
+                                    "size": {
+                                        "id": 3,
+                                        "name": "34"
+                                    },
+                                    "model_color": {
+                                        "id": 43,
+                                        "color": {
+                                            "id": 9,
+                                            "name": "Red Black",
+                                            "hex": "5B0013"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 19,
+                                        "name": "E30",
+                                        "sizes": [
+                                            {
+                                                "id": 37,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 38,
+                                                "name": "36"
+                                            },
+                                            {
+                                                "id": 3,
+                                                "name": "34"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 43,
+                                                "color": {
+                                                    "id": 9,
+                                                    "name": "Red Black",
+                                                    "hex": "5B0013"
+                                                }
+                                            },
+                                            {
+                                                "id": 41,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 42,
+                                                "color": {
+                                                    "id": 31,
+                                                    "name": "Jigarrang",
+                                                    "hex": "6A2D00"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 41,
+                                    "quantity": 50,
+                                    "size": {
+                                        "id": 37,
+                                        "name": "35"
+                                    },
+                                    "model_color": {
+                                        "id": 41,
+                                        "color": {
+                                            "id": 32,
+                                            "name": "Pink",
+                                            "hex": "FF00E0"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 19,
+                                        "name": "E30",
+                                        "sizes": [
+                                            {
+                                                "id": 37,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 38,
+                                                "name": "36"
+                                            },
+                                            {
+                                                "id": 3,
+                                                "name": "34"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 43,
+                                                "color": {
+                                                    "id": 9,
+                                                    "name": "Red Black",
+                                                    "hex": "5B0013"
+                                                }
+                                            },
+                                            {
+                                                "id": 41,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 42,
+                                                "color": {
+                                                    "id": 31,
+                                                    "name": "Jigarrang",
+                                                    "hex": "6A2D00"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 42,
+                                    "quantity": 50,
+                                    "size": {
+                                        "id": 39,
+                                        "name": "34"
+                                    },
+                                    "model_color": {
+                                        "id": 46,
+                                        "color": {
+                                            "id": 28,
+                                            "name": "Yashil",
+                                            "hex": "19FF00"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 20,
+                                        "name": "E46",
+                                        "sizes": [
+                                            {
+                                                "id": 39,
+                                                "name": "34"
+                                            },
+                                            {
+                                                "id": 40,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 41,
+                                                "name": "36"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 46,
+                                                "color": {
+                                                    "id": 28,
+                                                    "name": "Yashil",
+                                                    "hex": "19FF00"
+                                                }
+                                            },
+                                            {
+                                                "id": 45,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 44,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 43,
+                                    "quantity": 100,
+                                    "size": {
+                                        "id": 40,
+                                        "name": "35"
+                                    },
+                                    "model_color": {
+                                        "id": 45,
+                                        "color": {
+                                            "id": 32,
+                                            "name": "Pink",
+                                            "hex": "FF00E0"
+                                        }
+                                    },
+                                    "submodel": {
+                                        "id": 20,
+                                        "name": "E46",
+                                        "sizes": [
+                                            {
+                                                "id": 39,
+                                                "name": "34"
+                                            },
+                                            {
+                                                "id": 40,
+                                                "name": "35"
+                                            },
+                                            {
+                                                "id": 41,
+                                                "name": "36"
+                                            }
+                                        ],
+                                        "model_colors": [
+                                            {
+                                                "id": 46,
+                                                "color": {
+                                                    "id": 28,
+                                                    "name": "Yashil",
+                                                    "hex": "19FF00"
+                                                }
+                                            },
+                                            {
+                                                "id": 45,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            },
+                                            {
+                                                "id": 44,
+                                                "color": {
+                                                    "id": 32,
+                                                    "name": "Pink",
+                                                    "hex": "FF00E0"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
