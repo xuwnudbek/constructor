@@ -1,4 +1,3 @@
-
 import 'package:constructor/core/constants/app_constants.dart';
 import 'package:constructor/presentation/bloc/home/home_bloc.dart';
 import 'package:constructor/presentation/pages/home/order_details_page.dart';
@@ -32,7 +31,7 @@ class HomePage extends StatelessWidget {
             if (state is HomeLoadedState) {
               return RefreshIndicator(
                 onRefresh: () async {
-                  context.read<HomeBloc>().add(RefreshHomeDataEvent());
+                  context.read<HomeBloc>().add(LoadHomeDataEvent());
                 },
                 child: state.orders.isNotEmpty
                     ? GridView.builder(
@@ -47,16 +46,14 @@ class HomePage extends StatelessWidget {
                           Map order = state.orders[index];
 
                           return OrderCard(
-                            order: Map.from(order),
+                            order: order,
                             onPressed: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) {
                                   return BlocProvider.value(
                                     value: homeBloc,
-                                    child: OrderDetailsPage(
-                                      order: Map.from(order),
-                                    ),
+                                    child: OrderDetailsPage(orderIndex: index),
                                   );
                                 }),
                               );
@@ -66,8 +63,7 @@ class HomePage extends StatelessWidget {
                       )
                     : ListView(
                         physics: AlwaysScrollableScrollPhysics(),
-                        semanticChildCount: 1,
-                        itemExtent: MediaQuery.of(context).size.height,
+                        itemExtent: MediaQuery.of(context).size.height - 100,
                         children: [
                           Center(
                             child: Text(

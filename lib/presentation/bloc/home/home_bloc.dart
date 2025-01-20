@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:constructor/core/constants/api_constants.dart';
 import 'package:constructor/core/services/http_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +13,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   HomeBloc() : super(HomeInitialState()) {
     on<LoadHomeDataEvent>(_onLoadHomeData);
-    on<RefreshHomeDataEvent>(_onRefreshHomeData);
     on<ChangePlannedDateEvent>(_onChangePlannedDate);
     on<ChangeOrderPrintingStatusEvent>(_onChangeOrderPringtingTimeStatus);
   }
@@ -23,18 +24,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(HomeLoadingState());
 
-    List orders = await _getOrders();
-
-    emit(HomeLoadedState(orders));
-  }
-
-  Future<void> _onRefreshHomeData(
-    RefreshHomeDataEvent event,
-    Emitter<HomeState> emit,
-  ) async {
-    emit(HomeLoadingState());
-
-    List orders = await _getOrders();
+    List orders = await _getOrders();    
 
     emit(HomeLoadedState(orders));
   }
@@ -43,16 +33,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     ChangeOrderPrintingStatusEvent event,
     Emitter<HomeState> emit,
   ) async {
-    var res = await HttpService.patch(
-      "${ApiConsts.orderPrintingTimes}/${event.orderPrintingTime['id']}",
-      {
-        'id': event.orderPrintingTime['id'],
-        'status': event.orderPrintingTime['status'],
-      },
-    );
+    var res = await HttpService.post("${ApiConsts.orderPrintingTimes}/${event.id}", {});
 
     if (res['status'] == Result.success) {
-      add(RefreshHomeDataEvent());
+      emit(HomeMessageState(
+        "Order printing time updated",
+      ));
+
+      add(LoadHomeDataEvent());
+    } else {
+      emit(HomeMessageState(
+        "Failed to update order printing time",
+        MessageType.error,
+      ));
     }
   }
 
@@ -61,7 +54,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) {
     plannedDate = event.date;
-    add(RefreshHomeDataEvent());
+    add(LoadHomeDataEvent());
   }
 
   // Additional methods

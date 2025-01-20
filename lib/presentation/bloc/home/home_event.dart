@@ -9,8 +9,6 @@ abstract class HomeEvent extends Equatable {
 
 class LoadHomeDataEvent extends HomeEvent {}
 
-class RefreshHomeDataEvent extends HomeEvent {}
-
 class ChangePlannedDateEvent extends HomeEvent {
   final DateTime date;
 
@@ -21,12 +19,12 @@ class ChangePlannedDateEvent extends HomeEvent {
 }
 
 class ChangeOrderPrintingStatusEvent extends HomeEvent {
-  final Map orderPrintingTime;
+  final int id;
 
-  const ChangeOrderPrintingStatusEvent(this.orderPrintingTime);
+  const ChangeOrderPrintingStatusEvent(this.id);
 
   @override
-  List<Object> get props => [orderPrintingTime];
+  List<Object> get props => [id];
 }
 
 class HomeMessageEvent extends HomeEvent {

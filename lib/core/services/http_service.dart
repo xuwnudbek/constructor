@@ -42,7 +42,7 @@ class HttpService {
 
   static Future<Map<String, dynamic>> post(
     String endpoint,
-    Map<String, dynamic> body, {
+    Map<String, dynamic>? body, {
     bool isAuth = false,
   }) async {
     String token = StorageService.read("token") ?? "";

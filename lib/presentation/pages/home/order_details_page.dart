@@ -6,11 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../widgets/app_widgets/order_printing_card.dart';
 
 class OrderDetailsPage extends StatelessWidget {
-  final Map order;
+  final int orderIndex;
 
   const OrderDetailsPage({
     super.key,
-    required this.order,
+    required this.orderIndex,
   });
 
   @override
@@ -18,18 +18,26 @@ class OrderDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "${order['name'] ?? 'Noma\'lum'}",
+          "Noma'lum",
         ),
       ),
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-          var homeBloc = context.read<HomeBloc>();
-          List orderPrintingTimes = order['order_printing_times'] ?? [];
+          final homeBloc = context.read<HomeBloc>();
+          
+          if (state is HomeLoadingState) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
 
           if (state is HomeLoadedState) {
+            Map order = state.orders[orderIndex];
+            List orderPrintingTimes = order['order_printing_times'] ?? [];
+
             return RefreshIndicator(
               onRefresh: () async {
-                // context.read<HomeBloc>().add(RefreshHomeDataEvent());
+                context.read<HomeBloc>().add(LoadHomeDataEvent());
               },
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -44,14 +52,17 @@ class OrderDetailsPage extends StatelessWidget {
 
                   return OrderPrintingCard(
                     orderPrintingTimeData: Map.from(orderPrintingTime),
-                    onPressed: () {
-                      Navigator.push(
+                    onPressed: () async {
+                      Map orderData = Map.from(order)..remove("order_printing_times");
+                      orderData.addAll({"order_printing_time": orderPrintingTime});
+
+                      var res = await Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) {
                           return BlocProvider.value(
                             value: homeBloc,
                             child: PrintingDetailsPage(
-                              orderPrintingTimeData: orderPrintingTime,
+                              order: orderData,
                             ),
                           );
                         }),

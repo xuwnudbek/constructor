@@ -13,10 +13,8 @@ class OrderPrintingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateTime plannedTime =
-        DateTime.parse(orderPrintingTimeData['planned_time']);
-    DateTime? actualTime =
-        DateTime.tryParse(orderPrintingTimeData['actual_time'] ?? "");
+    DateTime plannedTime = DateTime.parse(orderPrintingTimeData['planned_time']);
+    DateTime? actualTime = DateTime.tryParse(orderPrintingTimeData['actual_time'] ?? "");
 
     Map model = orderPrintingTimeData['model'] ?? {};
 
@@ -54,10 +52,7 @@ class OrderPrintingCard extends StatelessWidget {
                         ),
                         TextSpan(
                           text: plannedTime.toLocal().toHM,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -74,13 +69,8 @@ class OrderPrintingCard extends StatelessWidget {
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                         TextSpan(
-                          text: actualTime != null
-                              ? actualTime.toLocal().toHM
-                              : 'N/A',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(fontWeight: FontWeight.bold),
+                          text: actualTime != null ? actualTime.toLocal().toHM : 'N/A',
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -96,21 +86,13 @@ class OrderPrintingCard extends StatelessWidget {
                     horizontal: 12,
                   ),
                   decoration: BoxDecoration(
-                    color: plannedTime.isAfter(DateTime.now()) &&
-                            actualTime == null
-                        ? Colors.red.withValues(alpha: 0.1)
-                        : Colors.green.withValues(alpha: 0.1),
+                    color: actualTime == null ? Colors.red.withValues(alpha: 0.1) : Colors.green.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Text(
-                    plannedTime.isAfter(DateTime.now()) && actualTime == null
-                        ? 'Bajarilmagan'
-                        : 'Bajarildi',
+                    actualTime == null ? 'Bajarilmagan' : 'Bajarildi',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: (plannedTime.isAfter(DateTime.now()) &&
-                                  actualTime == null
-                              ? Colors.red
-                              : Colors.green),
+                          color: actualTime == null ? Colors.red : Colors.green,
                         ),
                   ),
                 ),
