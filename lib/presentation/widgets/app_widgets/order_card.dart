@@ -12,16 +12,18 @@ class OrderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isPrinting = order['status'] == "printing";
+
     return GestureDetector(
       onTap: () {
         onPressed();
       },
       child: Card(
-        elevation: 2,
+        elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
-        shadowColor: Colors.grey.withValues(alpha: 0.2),
+        shadowColor: Colors.grey.withValues(alpha: 0.1),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Center(

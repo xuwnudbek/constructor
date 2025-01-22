@@ -4,7 +4,6 @@ import 'package:constructor/presentation/bloc/home/home_bloc.dart';
 import 'package:constructor/presentation/widgets/custom_snackbars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 
 class PrintingDetailsPage extends StatelessWidget {
   final Map order;
@@ -134,6 +133,23 @@ class PrintingDetailsPage extends StatelessWidget {
                             ],
                           ),
                         ),
+                      if (user.isNotEmpty)
+                        Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Model: ',
+                                style: TextTheme.of(context).bodyLarge,
+                              ),
+                              TextSpan(
+                                text: '${model['name']}',
+                                style: TextTheme.of(context).titleSmall?.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
                       if (comment.isNotEmpty)
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,10 +192,13 @@ class PrintingDetailsPage extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      "Submodellar:",
-                                      style: TextTheme.of(context).titleMedium,
-                                    ).marginOnly(left: 8.0),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 8),
+                                      child: Text(
+                                        "Submodellar:",
+                                        style: TextTheme.of(context).titleMedium,
+                                      ),
+                                    ),
                                     ListView.builder(
                                       shrinkWrap: true,
                                       physics: NeverScrollableScrollPhysics(),
@@ -198,12 +217,15 @@ class PrintingDetailsPage extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             spacing: 4.0,
                                             children: [
-                                              Text(
-                                                '${submodel['name']}',
-                                                style: TextTheme.of(context).titleMedium?.copyWith(
-                                                      fontWeight: FontWeight.bold,
-                                                    ),
-                                              ).paddingOnly(left: 8.0),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 8.0),
+                                                child: Text(
+                                                  '${submodel['name']}',
+                                                  style: TextTheme.of(context).titleMedium?.copyWith(
+                                                        fontWeight: FontWeight.bold,
+                                                      ),
+                                                ),
+                                              ),
                                               Text(
                                                 'O\'lchamlar: ',
                                                 style: TextTheme.of(context).titleSmall,
@@ -282,12 +304,15 @@ class PrintingDetailsPage extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             spacing: 4.0,
                                             children: [
-                                              Text(
-                                                '${instruction['title']}',
-                                                style: TextTheme.of(context).titleMedium?.copyWith(
-                                                      fontWeight: FontWeight.bold,
-                                                    ),
-                                              ).paddingOnly(left: 8.0),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 8.0),
+                                                child: Text(
+                                                  '${instruction['title']}',
+                                                  style: TextTheme.of(context).titleMedium?.copyWith(
+                                                        fontWeight: FontWeight.bold,
+                                                      ),
+                                                ),
+                                              ),
                                               Container(
                                                 width: double.infinity,
                                                 padding: const EdgeInsets.all(8.0),
@@ -322,10 +347,13 @@ class PrintingDetailsPage extends StatelessWidget {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     spacing: 8,
                                     children: [
-                                      Text(
-                                        'Izoh: ',
-                                        style: TextTheme.of(context).titleMedium,
-                                      ).paddingOnly(left: 8.0),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 8.0),
+                                        child: Text(
+                                          'Izoh: ',
+                                          style: TextTheme.of(context).titleMedium,
+                                        ),
+                                      ),
                                       Container(
                                         width: double.infinity,
                                         padding: const EdgeInsets.all(8.0),
@@ -334,7 +362,7 @@ class PrintingDetailsPage extends StatelessWidget {
                                           borderRadius: BorderRadius.circular(6.0),
                                         ),
                                         child: Text(
-                                          order['comment'] + "asdihwhd9 2d9h98 d2983h d298dh92 d3h9",
+                                          order['comment'],
                                           style: TextTheme.of(context).titleSmall,
                                         ),
                                       ),

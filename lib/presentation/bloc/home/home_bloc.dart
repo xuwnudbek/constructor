@@ -24,7 +24,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(HomeLoadingState());
 
-    List orders = await _getOrders();    
+    List orders = await _getOrders();
 
     emit(HomeLoadedState(orders));
   }
@@ -37,13 +37,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     if (res['status'] == Result.success) {
       emit(HomeMessageState(
-        "Order printing time updated",
+        "Buyurtma tugatildi!",
       ));
 
       add(LoadHomeDataEvent());
     } else {
       emit(HomeMessageState(
-        "Failed to update order printing time",
+        "Buyurtmani tugatishda muammo yuz berdi!",
         MessageType.error,
       ));
     }
@@ -65,6 +65,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         'planned_time': plannedDate.toIso8601String(),
       },
     );
+
+    inspect({
+      'planned_time': plannedDate.toIso8601String(),
+    });
 
     if (res['status'] == Result.success) {
       return res['data'] ?? [];

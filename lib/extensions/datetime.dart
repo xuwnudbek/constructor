@@ -1,17 +1,19 @@
+import 'package:intl/intl.dart';
+
 extension DatetimeExtension on DateTime {
   String get toHM {
-    return "$hour:$minute";
+    return DateFormat("HH:mm").format(this);
   }
 
-  String get toTime {
-    return "$hour:$minute:$second";
+  String get toHMS {
+    return DateFormat("HH:mm:ss").format(this);
   }
 
-  String get toDate {
-    return "$year-$month-$day";
+  String get toYMD {
+    return DateFormat("yyyy-MM-dd").format(this);
   }
 
-  String get toDateTime {
-    return "$year-$month-$day $hour:$minute:$second";
+  String get toYMDHM {
+    return DateFormat("yyyy-MM-dd HH:mm").format(this);
   }
 }

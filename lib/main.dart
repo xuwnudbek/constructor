@@ -6,6 +6,7 @@ import 'package:constructor/presentation/pages/home/home_page.dart';
 import 'package:constructor/presentation/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_storage/get_storage.dart';
 
 void main() async {
@@ -31,6 +32,18 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: AppConstants.appName,
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('en'),
+              Locale('uz'),
+              Locale('ru'),
+            ],
+            // Standart tilni o'rnatamiz
+            locale: const Locale('uz'),
             theme: isDarkMode ? AppTheme.darkTheme : AppTheme.lightTheme,
             home: state is AppSplashState
                 ? const SplashPage()
